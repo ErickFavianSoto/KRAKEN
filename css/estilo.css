@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#examen {
+  margin: -44px 50px 0px;
+  position: relative;
+  width: calc(100% - 100px);
+  color: black;
+  background-color: black;
+}
+
+#examen h1 {
+  color: white;
+  font-weight: 600;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 44px;
+}
+
+#pregunta {
+  padding: 20px;
+  background: #FAFAFA;
+}
+
+#pregunta h2 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+#pregunta input[type=radio] {
+  display: none;
+}
+
+#pregunta label {
+  display: inline-block;
+  margin: 4px;
+  padding: 8px;
+  background: #FAE3BB;
+  color: #4C3000;
+  width: calc(50% - 8px);
+  min-width: 100px;
+  cursor: pointer;
+}
+
+#pregunta label:hover {
+  background: #EBBB67;
+}
+
+#pregunta input[type=radio]:checked + label {
+  background: #CB8306;
+  color: #FAFAFA;
+}
+
+body {
+    background: #FFF;
+    font-family: 'Open Sans', Arial, 'Helvetica Neue', Sans-serif, Verdana;
+    font-size: 100%;
+}
+
+input:checked + label {
+  color: black;
+}
+
+input[type="radio"]:checked {
+  box-shadow: 0 0 0 3px rgb(33, 235, 31);
+}
+
+ul {list-style-type: none;}
+
+a {
+    color: #DFE2E6; 
+    text-decoration: none;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+
+/** ==========================================
+ * Contendor Principal 
+ =============================================*/
+ .main-wrapper {
+     display: block;
+     margin: 50px auto 40px;
+     width: 1000px;
+ }
+
+ .main-wrapper input[type="radio"] {
+     display: none;
+ }
+
+ /* Titulo 
+ ---------------------*/
+ .main-title {
+     color: #242424;
+     font: 400 3.2em 'Open Sans', Arial, Sans-serif, Verdana;
+     text-align: center;
+ }
+
+ .main-title a {
+     color: #1396e1;
+     font-size: 0.5em;
+     font-weight: 700;
+ }
+
+ /* Lista de Categorias 
+ --------------------------------------------*/
+ .list-category {
+     display: block;
+     text-align: center;
+     margin-top: 2px;
+ }
+
+.list-category li {
+    display: inline-block;
+    font-size: 2em;
+}
+
+.list-category label {
+    display: inline-block;
+    color: #696969;
+    cursor: pointer;
+	margin: 5px;
+	border: 4px solid #00ff00;
+    background: #c6cad2;
+    -webkit-box-shadow: inset 0 -2px 0 rgba(0,0,0,0.25);
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.25);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 12px 16px;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+/* Imagenes / En este caso divs de colores :C
+ --------------------------------------------------*/
+ .list-images {
+     color: #000;
+     display: block;
+     margin-top: 40px;
+     text-align: center;
+ }
+
+ .list-images li {
+     opacity: 0.5;
+    width: 300px;
+    height: 120px;
+    margin: 5px;
+    display: inline-block;
+    border: 4px solid #FFF;
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+    color: #FFF;
+    font-size: 2em;
+    font-weight: 700;
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+ }
+
+.list-images li span {
+    position: relative;
+    top: 40px;
+}
+
+.list-images .type-webdesign {background: #FE0000;}
+.list-images .type-webdevelopment {background: #0000FF;}
+.list-images .type-graphicdesign {background: #0bb20b;}
+/*.list-images .type-javascript {background: #994356;}*/
+
+/* Estilos cuando un radio esta seleccionado
+ --------------------------------------------------*/
+#all:checked ~ .list-category label[for="all"],
+#webdesign:checked ~ .list-category label[for="webdesign"], 
+#webdevelopment:checked ~ .list-category label[for="webdevelopment"], 
+#graphicdesign:checked ~ .list-category label[for="graphicdesign"], 
+#javascript:checked ~ .list-category label[for="javascript"] {
+    background: #1396e1;
+    color: #FFF;
+  width:120px;
+  height:120px;
+}
+
+/* Filtramos las clases mediante el selector ~
+ --------------------------------------------------*/
+#all:checked ~ .list-images li {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+#webdesign:checked ~ .list-images .type-webdesign,
+#webdevelopment:checked ~ .list-images .type-webdevelopment,
+#graphicdesign:checked ~ .list-images .type-graphicdesign,
+#javascript:checked ~ .list-images .type-javascript {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+/* Table */
+
+	.table-wrapper {
+		-webkit-overflow-scrolling: touch;
+		overflow-x: auto;
+	}
+
+	table {
+		margin: 0 0 2.25em 0;
+		width: 100%;
+	}
+
+		table tbody tr {
+			border: solid 4px #0000FF;
+			border-left: 0;
+			border-right: 0;
+		}
+
+			table tbody tr:nth-child(2n + 1) {
+				background-color: #0000FF;
+			}
+
+		table td {
+			color: #0000FF;
+			padding: 0.75em 0.75em;
+		}
+
+		table th {
+			color: #0000FF;
+			font-size: 0.9em;
+			font-weight: 700;
+			padding: 0 0.75em 0.75em 0.75em;
+			text-align: left;
+		}
+
+		table thead {
+			border-bottom: solid 4px #0000FF;
+		}
+
+		table tfoot {
+			border-top: solid 4px #0000FF;
+		}
+
+		table.alt {
+			border-collapse: separate;
+		}
+
+			table.alt tbody tr td {
+				border: solid 2px #0000FF;
+				border-left-width: 0;
+				border-top-width: 0;
+			}
+
+				table.alt tbody tr td:first-child {
+					border-left-width: 2px;
+				}
+
+			table.alt tbody tr:first-child td {
+				border-top-width: 2px;
+			}
+
+			table.alt thead {
+				border-bottom: 0;
+			}
+
+			table.alt tfoot {
+				border-top: 0;
+			}
